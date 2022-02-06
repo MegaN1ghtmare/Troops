@@ -1,89 +1,90 @@
 #include <iostream>
 #include "Unit.hpp"
 #include "Ability.hpp"
-#include "State.hpp"
-
-void Unit::ensureIsAlive() {
-   if ( this->hitPoints == 0 ) {
-       throw UnitIsDead();
-   }
-}
 
 Unit::Unit(const std::string& name, int hp, int dmg)
-    : State(name, hp, dmg), Ability(damage, hitPoints, hitPointsLimit) {
+    : name(name), hitPoints(hp), hitPointsLimit(hp),
+    damage(dmg) {
+
+    this->action = new Ability(damage, hitPoints, hitPointsLimit);
+    this->status = new UnitClassifier();
+    this->observable = new Observable();
+
     if ( hp < 1 || dmg < 1 ) {
         throw UnitIsDead();
     }
 }
 
+Unit::~Unit() {
+
+}
+
+int Unit::getManaPoints() const {
+    return 0;
+}
+
+int Unit::getManaPointsLimit() const {
+    return 0;
+}
+
+int Unit::getSpellCost() const {
+    return 999999;
+}
+
 int Unit::getDamage() const {
-    return this->damage;
+    return action->getDamage();
 }
 
 int Unit::getHitPoints() const {
-    return this->hitPoints;
+    return action->getHitPoints();
 }
 
 int Unit::getHitPointsLimit() const {
-    return this->hitPointsLimit;
+    return action->getHitPointsLimit();
 }
 
 const std::string& Unit::getName() const {
     return this->name;
 }
 
+Observable* Unit::getObservable() const {
+    return this->observable;
+}
+
+bool Unit::getIfMeleeUnit() const {
+    return status->getIfMeleeUnit();
+}
+
+bool Unit::getIfAbleToCastUnit() const {
+    return status->getIfAbleToCastUnit();
+}
+
+bool Unit::getIfUnitUndead() const {
+    return status->getIfUnitUndead();
+}
+
 void Unit::addHitPoints(int hp) {
-    ensureIsAlive();
-
-    int maxAddHitPoints = getHitPointsLimit() - getHitPoints();
-
-    if ( hp > maxAddHitPoints ) {
-        this->hitPoints = this->hitPointsLimit;
-
-        return;
-    }
-
-    if ( hp < 0 ) {
-        hp *= -1;
-    }
-
-    this->hitPoints += hp;
+    action->addHitPoints(hp);
 }
 
 void Unit::takeDamage(int dmg) {
-    ensureIsAlive();
+    action->takeDamage(dmg);
+}
 
-    if ( dmg >= getHitPoints() ) {
-        this->hitPoints = 0;
-
-        return;
-    }
-
-    this->hitPoints -= dmg;
+void Unit::takeMagicDamage(int dmg) {
+    action->takeMagicDamage(dmg);
 }
 
 void Unit::attack(Unit& enemy) {
-    enemy.takeDamage(getDamage());
-
-    if ( enemy.hitPoints > 0 ) {
-        enemy.counterAttack(*this);
-    }
+    action->attack(*this, enemy);
 }
 
 void Unit::counterAttack(Unit& enemy) {
-    int counterAttackDmg = getDamage() / 2;
-
-    if ( counterAttackDmg > enemy.getHitPoints() ) {
-        enemy.hitPoints = 0;
-
-        return;
-    }
-
-    enemy.hitPoints -= counterAttackDmg;
+    action->counterAttack(enemy);
 }
 
 std::ostream& operator<<(std::ostream& out, const Unit& unit) {
-    out << "Unit: " << unit.getName() << ", max HP: " << unit.getHitPointsLimit() << ", current HP: " << unit.getHitPoints() << ", damage: " << unit.getDamage() << std::endl;
+    out << "Unit: " << unit.getName() << ", HP:(" << unit.getHitPointsLimit() << "/" << unit.getHitPoints() << "), damage: " << unit.getDamage() << std::endl;
 
     return out;
 }

@@ -1,22 +1,31 @@
 #include <iostream>
 #include "Ability.hpp"
-#include "Unit.cpp"
-#include "State.cpp"
-
-class State;
+#include "Unit.hpp"
 
 void Ability::ensureIsAlive() {
-   if ( State::getHitPoints() == 0 ) {
+   if ( this->hitPoints == 0 ) {
        throw UnitIsDead();
    }
 }
 
 Ability::Ability(int& dmg, int& hp, int& hpLimits)
-    : damage(dmg), hitPoints(hp), hitPointsLimit(hp) {
+    : damage(dmg), hitPoints(hp), hitPointsLimit(hpLimits) {
 }
 
 Ability::~Ability() {
 
+}
+
+int& Ability::getDamage() const {
+    return damage;
+}
+
+int& Ability::getHitPoints() const {
+    return hitPoints;
+}
+
+int& Ability::getHitPointsLimit() const {
+    return hitPointsLimit;
 }
 
 void Ability::addHitPoints(int hp) {
@@ -26,7 +35,6 @@ void Ability::addHitPoints(int hp) {
 
     if ( hp > maxAddHitPoints ) {
         hitPoints = hitPointsLimit;
-
         return;
     }
 
@@ -49,22 +57,28 @@ void Ability::takeDamage(int dmg) {
     hitPoints -= dmg;
 }
 
-void Ability::attack(Unit& enemy) {
+void Ability::takeMagicDamage(int dmg) {
+    ensureIsAlive();
+
+    if ( dmg >= getHitPoints() ) {
+        hitPoints = 0;
+
+        return;
+    }
+
+    hitPoints -= dmg;
+}
+
+void Ability::attack(Unit& caller, Unit& enemy) {
     enemy.takeDamage(getDamage());
 
     if ( enemy.getHitPoints() > 0 ) {
-        enemy.counterAttack(*this);
+        enemy.counterAttack(caller);
     }
 }
 
 void Ability::counterAttack(Unit& enemy) {
     int counterAttackDmg = getDamage() / 2;
 
-    if ( counterAttackDmg > enemy.getHitPoints() ) {
-        enemy.hitPoints = 0;
-
-        return;
-    }
-
-    enemy.hitPoints -= counterAttackDmg;
+    enemy.takeDamage(counterAttackDmg);
 }
