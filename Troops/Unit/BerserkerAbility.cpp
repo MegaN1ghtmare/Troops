@@ -1,6 +1,4 @@
-#include <iostream>
 #include "BerserkerAbility.hpp"
-#include "Unit.hpp"
 
 BerserkerAbility::BerserkerAbility(int& dmg, int& hp, int& hpLimits)
     : Ability(dmg, hp, hpLimits) {

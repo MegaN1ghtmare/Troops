@@ -1,12 +1,12 @@
 #ifndef SOLDIER_HPP
 #define SOLDIER_HPP
 
-#include <iostream>
+// #include <iostream>
 #include "Unit.hpp"
 #include "Ability.hpp"
 
-class Ability;
-class UnitClassifier;
+// class Ability;
+// class UnitClassifier;
 
 class Soldier: public Unit {
     public:

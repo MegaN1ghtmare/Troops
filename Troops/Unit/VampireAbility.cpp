@@ -1,4 +1,3 @@
-#include <iostream>
 #include "VampireAbility.hpp"
 
 VampireAbility::VampireAbility(int& dmg, int& hp, int& hpLimits)

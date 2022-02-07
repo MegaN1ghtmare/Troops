@@ -24,13 +24,9 @@ class Unit {
         virtual ~Unit();
 
         int getDamage() const;
-        // int getMagicDamage() const;
         int getHitPoints() const;
         int getHitPointsLimit() const;
         const std::string& getName() const;
-        // virtual int getManaPoints() const;
-        // virtual int getManaPointsLimit() const;
-        // virtual int getSpellCost() const;
 
         virtual bool getIfMeleeUnit() const;
         virtual bool getIfAbleToCastUnit() const;
@@ -39,7 +35,6 @@ class Unit {
         // Observable* getObservable() const;
         // virtual Observer* getObserver() = 0;
 
-        // virtual void addManaPoints(int mana);
         virtual void addHitPoints(int hp);
         virtual void takeDamage(int dmg) = 0;
         virtual void takeMagicDamage(int dmg);

@@ -85,8 +85,8 @@ int main() {
     std::cout << priest << std::endl;
     std::cout << warlock << std::endl;
 
-    // Wizard sup("Sup", 100, 150, 5, 25);
-    // Wizard mag("Mag", 80, 200, 7, 38);
+    Wizard sup("Sup", 100, 150, 5, 25);
+    Wizard mag("Mag", 80, 200, 7, 38);
     // std::cout << "mag created:" << std::endl << mag;
     // std::cout << sup << std::endl;
 
@@ -98,9 +98,17 @@ int main() {
     // std::cout << "mag attack sup:" << std::endl << sup;
     // std::cout << mag << std::endl;
 
-    // Berserker bers("Konan", 444, 42);
-    // std::cout << "bers created: "<< std::endl;
-    // std::cout << bers << std::endl;
+    Berserker bers("Konan", 444, 42);
+    std::cout << "bers created: "<< std::endl;
+    std::cout << bers << std::endl;
+
+    Soldier sold("sold", 600, 57);
+    std::cout << "sold created: "<< std::endl;
+    std::cout << sold << std::endl;
+
+    Rogue rog("rog", 333, 33);
+    std::cout << "rog created: "<< std::endl;
+    std::cout << rog << std::endl;
 
     // vampire.attack(bers);
     // std::cout << "vampire attack bers:" << std::endl << vampire;

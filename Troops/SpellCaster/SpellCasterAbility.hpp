@@ -2,14 +2,9 @@
 #define SPELLCASTERABILITY_HPP
 
 #include "SpellCaster.hpp"
-// #include "../Unit/Unit.hpp"
 #include "../Unit/Ability.hpp"
-// #include "MagicianAbility.hpp"
 
-// class MagicianAbility;
 class SpellCaster;
-
-class SpellCasterIsDead {};
 
 class SpellCasterAbility: public Ability {
     protected:

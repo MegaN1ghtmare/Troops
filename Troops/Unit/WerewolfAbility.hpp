@@ -4,7 +4,7 @@
 #include "Ability.hpp"
 #include "Unit.hpp"
 
-class Unit;
+// class Unit;
 
 class WerewolfAbility : public Ability {
     public:

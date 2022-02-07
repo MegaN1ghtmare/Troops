@@ -1,6 +1,4 @@
 #include "Rogue.hpp"
-#include "RogueAbility.hpp"
-#include "Unit.hpp"
 
 Rogue::Rogue(const std::string& name, int hp, int dmg)
     : Unit(name, hp, dmg) {

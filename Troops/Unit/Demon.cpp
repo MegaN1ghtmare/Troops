@@ -1,5 +1,4 @@
 #include "Demon.hpp"
-#include "Unit.hpp"
 
 Demon::Demon(const std::string& name, int hp, int dmg)
     : Unit(name, hp, dmg) {

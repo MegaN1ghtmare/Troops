@@ -1,11 +1,11 @@
 #ifndef VAMPIRE_HPP
 #define VAMPIRE_HPP
 
-#include <iostream>
+// #include <iostream>
 #include "Unit.hpp"
 #include "VampireAbility.hpp"
 
-class VampireAbility;
+// class VampireAbility;
 
 class Vampire: public Unit {
     public:

@@ -3,7 +3,7 @@
 
 #include "Ability.hpp"
 
-class Unit;
+// class Unit;
 
 class RogueAbility : public Ability {
     public:

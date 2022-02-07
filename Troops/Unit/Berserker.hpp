@@ -1,7 +1,7 @@
 #ifndef BERSERKER_HPP
 #define BERSERKER_HPP
 
-#include <iostream>
+// #include <iostream>
 #include "Unit.hpp"
 #include "BerserkerAbility.hpp"
 

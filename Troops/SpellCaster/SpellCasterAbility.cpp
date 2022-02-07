@@ -1,14 +1,7 @@
 #include "SpellCasterAbility.hpp"
 
-// void SpellCasterAbility::ensureIsAlive() {
-//    if ( this->hitPoints == 0 ) {
-//        throw SpellCasterIsDead();
-//    }
-// }
-
 SpellCasterAbility::SpellCasterAbility(int& dmg, int& mDmg, int& hp, int& hpLimits, int& manaPoints, int& mpLimits, int& sCost)
     :   Ability(dmg, hp, hpLimits),
-    // MagicianAbility(mDmg, manaPoints, mpLimits, sCost)
         magicDamage(mDmg), manaPoints(manaPoints),
         manaPointsLimit(mpLimits), spellCost(sCost)
     {
@@ -19,7 +12,7 @@ SpellCasterAbility::~SpellCasterAbility() {
 }
 
 void SpellCasterAbility::addManaPoints(int mana) {
-    // ensureIsAlive();
+    ensureIsAlive();
 
     int maxAddManaPoints = getManaPointsLimit() - getManaPoints();
 

@@ -1,6 +1,4 @@
 #include "Vampire.hpp"
-#include "VampireAbility.hpp"
-#include "Unit.hpp"
 
 Vampire::Vampire(const std::string& name, int hp, int dmg)
     : Unit(name, hp, dmg) {

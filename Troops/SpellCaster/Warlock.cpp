@@ -7,10 +7,6 @@ Warlock::Warlock(const std::string& name, int hp, int mana, int dmg, int mDmg)
 
     this->action = new WarlockAbility(damage, magicDamage, hitPoints, hitPointsLimit, manaPoints, manaPointsLimit, spellCost);
     this->status = new UnitClassifier(1, 1, 0);
-
-    if ( hp < 1 || dmg < 1 ) {
-        throw SpellCasterIsDead();
-    }
 }
 
 Warlock::~Warlock() {

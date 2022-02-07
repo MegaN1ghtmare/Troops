@@ -1,6 +1,4 @@
-// #include <iostream>
 #include "HealerAbility.hpp"
-// #include "SpellCaster.hpp"
 
 HealerAbility::HealerAbility(int& dmg, int& mDmg, int& hp, int& hpLimits, int& manaPoints, int& mpLimits, int& sCost)
     : SpellCasterAbility(dmg, mDmg, hp, hpLimits, manaPoints, mpLimits, sCost) {

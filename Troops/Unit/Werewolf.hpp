@@ -1,13 +1,13 @@
 #ifndef WEREWOLF_HPP
 #define WEREWOLF_HPP
 
-#include <iostream>
+// #include <iostream>
 #include "Unit.hpp"
-#include "Ability.hpp"
+// #include "Ability.hpp"
 #include "WerewolfAbility.hpp"
 
-class WerewolfAbilitys;
-class Ability;
+// class WerewolfAbilitys;
+// class Ability;
 
 class Werewolf: public Unit {
     private:
