@@ -1,6 +1,4 @@
-#include <iostream>
 #include "WizardAbility.hpp"
-#include "SpellCaster.hpp"
 
 WizardAbility::WizardAbility(int& dmg, int& mDmg, int& hp, int& hpLimits, int& manaPoints, int& mpLimits, int& sCost)
     : SpellCasterAbility(dmg, mDmg, hp, hpLimits, manaPoints, mpLimits, sCost) {
@@ -10,21 +8,32 @@ WizardAbility::~WizardAbility() {
 
 }
 
-void WizardAbility::attack(Unit& caller, Unit& enemy) {
-    if ( caller.getManaPoints() >= caller.getSpellCost() ) {
-        enemy.takeMagicDamage(getMagicDamage() * 1.1);
-        manaPoints -= caller.getSpellCost();
-    } else {
-        enemy.takeDamage(getDamage());
-    }
-
-    caller.addManaPoints(getManaPointsLimit() * 0.05);
+void WizardAbility::magicAttack(SpellCaster& caller, Unit& enemy) {
+    enemy.takeMagicDamage(getMagicDamage());
+    manaPoints -= caller.getSpellCost();
 
     if ( enemy.getHitPoints() > 0 ) {
         enemy.counterAttack(caller);
     }
+
+    caller.addManaPoints(getManaPointsLimit() * 0.05);
 }
 
-void WizardAbility::addManaPoints(int mana) {
-    SpellCasterAbility::addManaPoints(mana);
+void WizardAbility::addHitPoints(int hp) {
+    ensureIsAlive();
+
+    hp /= 2;
+
+    int maxAddHitPoints = getHitPointsLimit() - getHitPoints();
+
+    if ( hp > maxAddHitPoints ) {
+        hitPoints = hitPointsLimit;
+        return;
+    }
+
+    if ( hp < 0 ) {
+        hp *= -1;
+    }
+
+    hitPoints += hp;
 }

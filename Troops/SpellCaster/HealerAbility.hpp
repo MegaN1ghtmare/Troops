@@ -2,16 +2,14 @@
 #define HEALERABILITY_HPP
 
 #include "SpellCasterAbility.hpp"
-
-class SpellCaster;
+#include "SpellCaster.hpp"
 
 class HealerAbility: public SpellCasterAbility {
     public:
         HealerAbility(int& dmg, int& mDmg, int& hp, int& hpLimits, int& manaPoints, int& mpLimits, int& sCost);
         virtual ~HealerAbility();
 
-        void attack(Unit& caller, Unit& enemy) override;
-        void addManaPoints(int mana) override;
+        void magicAttack(SpellCaster& caller, Unit& enemy) override;
 };
 
 #endif //HEALERABILITY_HPP

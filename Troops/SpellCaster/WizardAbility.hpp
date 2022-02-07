@@ -2,16 +2,16 @@
 #define WIZARDABILITY_HPP
 
 #include "SpellCasterAbility.hpp"
-
-class SpellCaster;
+#include "SpellCaster.hpp"
 
 class WizardAbility: public SpellCasterAbility {
     public:
         WizardAbility(int& dmg, int& mDmg, int& hp, int& hpLimits, int& manaPoints, int& mpLimits, int& sCost);
         virtual ~WizardAbility();
 
-        void attack(Unit& caller, Unit& enemy) override;
-        void addManaPoints(int mana) override;
+        void addHitPoints(int hp) override;
+
+        void magicAttack(SpellCaster& caller, Unit& enemy) override;
 };
 
 #endif //WIZARDABILITY_HPP

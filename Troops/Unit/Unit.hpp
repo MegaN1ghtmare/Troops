@@ -4,11 +4,11 @@
 #include <iostream>
 #include "Ability.hpp"
 #include "../Properties/UnitClassifier.hpp"
-#include "../Properties/Observable.hpp"
+// #include "../Properties/Observable.hpp"
 
 class Ability;
 class UnitClassifier;
-class Observable;
+// class Observable;
 
 class Unit {
     private:
@@ -18,25 +18,26 @@ class Unit {
         std::string name;
         Ability* action;
         UnitClassifier* status;
-        Observable* observable;
+        // Observable* observable;
     public:
         Unit(const std::string& name, int hp, int dmg);
         virtual ~Unit();
 
         int getDamage() const;
-        int getMagicDamage() const;
+        // int getMagicDamage() const;
         int getHitPoints() const;
         int getHitPointsLimit() const;
         const std::string& getName() const;
-        virtual int getManaPoints() const;
-        virtual int getManaPointsLimit() const;
-        virtual int getSpellCost() const;
+        // virtual int getManaPoints() const;
+        // virtual int getManaPointsLimit() const;
+        // virtual int getSpellCost() const;
 
         virtual bool getIfMeleeUnit() const;
         virtual bool getIfAbleToCastUnit() const;
         virtual bool getIfUnitUndead() const;
 
-        Observable* getObservable() const;
+        // Observable* getObservable() const;
+        // virtual Observer* getObserver() = 0;
 
         // virtual void addManaPoints(int mana);
         virtual void addHitPoints(int hp);

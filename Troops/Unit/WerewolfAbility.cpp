@@ -1,6 +1,6 @@
-#include <iostream>
+// #include <iostream>
 #include "WerewolfAbility.hpp"
-#include "Unit.hpp"
+// #include "Unit.hpp"
 
 #define VULNERABILITYTOMAGICMTPL 3
 

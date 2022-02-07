@@ -12,8 +12,6 @@ class Healer: public SpellCaster {
         Healer(const std::string& name, int hp, int mana, int dmg, int mDmg);
         virtual ~Healer();
 
-        void takeDamage(int dmg) override;
-
         void addManaPoints(int mana) override;
 };
 

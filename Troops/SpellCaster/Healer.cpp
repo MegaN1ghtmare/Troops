@@ -1,7 +1,4 @@
-#include <iostream>
-#include "SpellCaster.hpp"
 #include "Healer.hpp"
-#include "HealerAbility.hpp"
 
 Healer::Healer(const std::string& name, int hp, int mana, int dmg, int mDmg)
     : SpellCaster(name, hp, mana, dmg, mDmg) {
@@ -18,10 +15,6 @@ Healer::Healer(const std::string& name, int hp, int mana, int dmg, int mDmg)
 
 Healer::~Healer() {
 
-}
-
-void Healer::takeDamage(int dmg) {
-    SpellCaster::takeDamage(dmg);
 }
 
 void Healer::addManaPoints(int mana) {

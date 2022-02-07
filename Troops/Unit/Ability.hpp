@@ -1,6 +1,8 @@
 #ifndef ABILITY_HPP
 #define ABILITY_HPP
 
+#include "Unit.hpp"
+
 class Unit;
 
 class UnitIsDead {};

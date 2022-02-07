@@ -1,10 +1,8 @@
 #ifndef SPELLCASTER_HPP
 #define SPELLCASTER_HPP
 
-#include <iostream>
 #include "SpellCasterAbility.hpp"
 #include "../Unit/Unit.hpp"
-#include "../Properties/UnitClassifier.hpp"
 
 class SpellCasterAbility;
 
@@ -20,22 +18,22 @@ class SpellCaster: public Unit {
         SpellCaster(const std::string& name, int hp, int mana, int dmg, int mDmg);
         virtual ~SpellCaster();
 
-        int getDamage() const;
+        // int getDamage() const;
         int getMagicDamage() const;
-        int getManaPoints() const override;
-        int getManaPointsLimit() const override;
-        int getHitPoints() const;
-        int getHitPointsLimit() const;
-        int getSpellCost() const override;
-        const std::string& getName() const;
+        int getManaPoints() const;
+        int getManaPointsLimit() const;
+        // int getHitPoints() const;
+        // int getHitPointsLimit() const;
+        int getSpellCost() const;
+        // const std::string& getName() const;
 
-        void addHitPoints(int hp) override;
+        // void addHitPoints(int hp) override;
         virtual void addManaPoints(int mana) = 0;
         void takeDamage(int dmg) override;
-        void takeMagicDamage(int dmg) override;
+        // void takeMagicDamage(int dmg) override;
 
         void attack(Unit& enemy) override;
-        void counterAttack(Unit& enemy) override;
+        // void counterAttack(Unit& enemy) override;
 
         friend class Ability;
         friend class Soldier;

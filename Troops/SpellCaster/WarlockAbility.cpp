@@ -1,8 +1,4 @@
-#include <iostream>
-#include <sstream>
-#include <map>
 #include "WarlockAbility.hpp"
-#include "SpellCaster.hpp"
 
 WarlockAbility::WarlockAbility(int& dmg, int& mDmg, int& hp, int& hpLimits, int& manaPoints, int& mpLimits, int& sCost)
     : SpellCasterAbility(dmg, mDmg, hp, hpLimits, manaPoints, mpLimits, sCost) {
@@ -13,29 +9,21 @@ WarlockAbility::~WarlockAbility() {
 
 }
 
-void WarlockAbility::attack(Unit& caller, Unit& enemy) {
+void WarlockAbility::magicAttack(SpellCaster& caller, Unit& enemy) {
     if ( caller.getManaPoints() >= callDemonManaCost ) {
         callDemon();
         manaPoints -= callDemonManaCost;
         return;
-    } else if ( caller.getManaPoints() >= caller.getSpellCost() ) {
-        enemy.takeMagicDamage(getMagicDamage());
-        manaPoints -= caller.getSpellCost();
-    } else {
-        enemy.takeDamage(getDamage());
     }
 
-    caller.addManaPoints(getManaPointsLimit() * 0.03);
-
-
+    enemy.takeMagicDamage(getMagicDamage());
+    manaPoints -= caller.getSpellCost();
 
     if ( enemy.getHitPoints() > 0 ) {
         enemy.counterAttack(caller);
     }
-}
 
-void WarlockAbility::addManaPoints(int mana) {
-    SpellCasterAbility::addManaPoints(mana);
+    caller.addManaPoints(getManaPointsLimit() * 0.03);
 }
 
 void WarlockAbility::callDemon() {

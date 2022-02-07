@@ -1,6 +1,4 @@
-#include <iostream>
 #include "PriestAbility.hpp"
-#include "SpellCaster.hpp"
 
 #define UNDEADDMGMLTP 2
 
@@ -12,25 +10,21 @@ PriestAbility::~PriestAbility() {
 
 }
 
-void PriestAbility::attack(Unit& caller, Unit& enemy) {
+void PriestAbility::magicAttack(SpellCaster& caller, Unit& enemy) {
     int undeadDmgMuliplier = 1;
 
     if (enemy.getIfUnitUndead()) {
         undeadDmgMuliplier *= UNDEADDMGMLTP;
     }
 
-    if ( caller.getManaPoints() >= caller.getSpellCost() ) {
-        enemy.takeMagicDamage(getMagicDamage() * 0.5 * undeadDmgMuliplier);
-        manaPoints -= caller.getSpellCost();
-    } else {
-        enemy.takeDamage(getDamage() * undeadDmgMuliplier);
-    }
-
-    caller.addManaPoints(getManaPointsLimit() * 0.05);
+    enemy.takeMagicDamage(getMagicDamage() * 0.5 * undeadDmgMuliplier);
+    manaPoints -= caller.getSpellCost();
 
     if ( enemy.getHitPoints() > 0 ) {
         enemy.counterAttack(caller);
     }
+
+    caller.addManaPoints(getManaPointsLimit() * 0.05);
 }
 
 void PriestAbility::counterAttack(Unit& enemy) {
@@ -41,8 +35,4 @@ void PriestAbility::counterAttack(Unit& enemy) {
     }
 
     enemy.takeDamage(counterAttackDmg);
-}
-
-void PriestAbility::addManaPoints(int mana) {
-    SpellCasterAbility::addManaPoints(mana);
 }

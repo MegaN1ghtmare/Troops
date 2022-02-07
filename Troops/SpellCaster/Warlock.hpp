@@ -1,7 +1,6 @@
 #ifndef WARLOCK_HPP
 #define WARLOCK_HPP
 
-#include <iostream>
 #include "SpellCaster.hpp"
 #include "WarlockAbility.hpp"
 
@@ -11,8 +10,6 @@ class Warlock: public SpellCaster {
     public:
         Warlock(const std::string& name, int hp, int mana, int dmg, int mDmg);
         virtual ~Warlock();
-
-        void takeDamage(int dmg) override;
 
         void addManaPoints(int mana) override;
 };

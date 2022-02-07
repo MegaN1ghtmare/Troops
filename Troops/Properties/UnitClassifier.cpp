@@ -1,4 +1,3 @@
-#include "Unit.hpp"
 #include "UnitClassifier.hpp"
 
 UnitClassifier::UnitClassifier(bool melee, bool ableToCast, bool undead)

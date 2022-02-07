@@ -1,9 +1,9 @@
-#include "IObserver.hpp"
+// #include "IObserver.hpp"
 
-IObserver::IObserver() {
+// IObserver::IObserver() {
 
-}
+// }
 
-IObserver::~IObserver() {
+// IObserver::~IObserver() {
 
-}
+// }

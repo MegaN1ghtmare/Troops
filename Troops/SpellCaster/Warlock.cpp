@@ -1,7 +1,4 @@
-#include <iostream>
-#include "SpellCaster.hpp"
 #include "Warlock.hpp"
-#include "WarlockAbility.hpp"
 
 Warlock::Warlock(const std::string& name, int hp, int mana, int dmg, int mDmg)
     : SpellCaster(name, hp, mana, dmg, mDmg) {
@@ -18,10 +15,6 @@ Warlock::Warlock(const std::string& name, int hp, int mana, int dmg, int mDmg)
 
 Warlock::~Warlock() {
 
-}
-
-void Warlock::takeDamage(int dmg) {
-    SpellCaster::takeDamage(dmg);
 }
 
 void Warlock::addManaPoints(int mana) {

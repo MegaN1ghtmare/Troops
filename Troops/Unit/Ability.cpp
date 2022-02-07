@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Ability.hpp"
-#include "Unit.hpp"
 
 void Ability::ensureIsAlive() {
    if ( this->hitPoints == 0 ) {

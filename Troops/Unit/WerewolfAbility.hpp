@@ -2,7 +2,7 @@
 #define WEREWOLFABILITY_HPP
 
 #include "Ability.hpp"
-#include "Werewolf.hpp"
+#include "Unit.hpp"
 
 class Unit;
 

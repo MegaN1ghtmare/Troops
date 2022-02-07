@@ -1,7 +1,4 @@
-#include <iostream>
-#include "SpellCaster.hpp"
 #include "Wizard.hpp"
-#include "WizardAbility.hpp"
 
 Wizard::Wizard(const std::string& name, int hp, int mana, int dmg, int mDmg)
     : SpellCaster(name, hp, mana, dmg, mDmg) {
@@ -18,10 +15,6 @@ Wizard::Wizard(const std::string& name, int hp, int mana, int dmg, int mDmg)
 
 Wizard::~Wizard() {
 
-}
-
-void Wizard::takeDamage(int dmg) {
-    SpellCaster::takeDamage(dmg);
 }
 
 void Wizard::addManaPoints(int mana) {

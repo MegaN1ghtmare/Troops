@@ -2,6 +2,7 @@
 #define VAMPIREABILITY_HPP
 
 #include "Ability.hpp"
+#include "Unit.hpp"
 
 class Unit;
 

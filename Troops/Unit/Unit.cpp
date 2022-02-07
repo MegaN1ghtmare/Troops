@@ -8,7 +8,7 @@ Unit::Unit(const std::string& name, int hp, int dmg)
 
     this->action = new Ability(damage, hitPoints, hitPointsLimit);
     this->status = new UnitClassifier();
-    this->observable = new Observable();
+    // this->observable = new Observable();
 
     if ( hp < 1 || dmg < 1 ) {
         throw UnitIsDead();
@@ -19,17 +19,17 @@ Unit::~Unit() {
 
 }
 
-int Unit::getManaPoints() const {
-    return 0;
-}
+// int Unit::getManaPoints() const {
+//     return 0;
+// }
 
-int Unit::getManaPointsLimit() const {
-    return 0;
-}
+// int Unit::getManaPointsLimit() const {
+//     return 0;
+// }
 
-int Unit::getSpellCost() const {
-    return 999999;
-}
+// int Unit::getSpellCost() const {
+//     return 999999;
+// }
 
 int Unit::getDamage() const {
     return action->getDamage();
@@ -47,9 +47,9 @@ const std::string& Unit::getName() const {
     return this->name;
 }
 
-Observable* Unit::getObservable() const {
-    return this->observable;
-}
+// Observable* Unit::getObservable() const {
+//     return this->observable;
+// }
 
 bool Unit::getIfMeleeUnit() const {
     return status->getIfMeleeUnit();

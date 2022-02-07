@@ -1,7 +1,4 @@
-#include <iostream>
-#include "SpellCaster.hpp"
 #include "Priest.hpp"
-#include "PriestAbility.hpp"
 
 Priest::Priest(const std::string& name, int hp, int mana, int dmg, int mDmg)
     : SpellCaster(name, hp, mana, dmg, mDmg) {
@@ -20,16 +17,8 @@ Priest::~Priest() {
 
 }
 
-void Priest::takeDamage(int dmg) {
-    SpellCaster::takeDamage(dmg);
-}
-
 void Priest::addManaPoints(int mana) {
     action->addManaPoints(mana);
-}
-
-void Priest::counterAttack(Unit& enemy) {
-    action->counterAttack(enemy);
 }
 
 std::ostream& operator<<(std::ostream& out, const Priest& priest) {

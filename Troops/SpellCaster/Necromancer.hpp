@@ -1,28 +1,30 @@
-#ifndef NECROMANCEER_HPP
-#define NECROMANCEER_HPP
+// #ifndef NECROMANCEER_HPP
+// #define NECROMANCEER_HPP
 
-#include <iostream>
-#include "SpellCaster.hpp"
-// #include "NecromancerAbility.hpp"
-#include "../Properties/Observer.hpp"
+// #include <iostream>
+// #include "SpellCaster.hpp"
+// // #include "NecromancerAbility.hpp"
+// #include "../Properties/Observer.hpp"
 
-class NecromancerAbility;
-class Observer;
+// // class NecromancerAbility;
+// class Observer;
 
-class Necromancer: public SpellCaster {
-    private:
-        Observer* observer;
-    public:
-        Necromancer(const std::string& name, int hp, int mana, int dmg, int mDmg);
-        virtual ~Necromancer();
+// class Necromancer: public SpellCaster {
+//     private:
+//         Observer* observer;
+//     public:
+//         Necromancer(const std::string& name, int hp, int mana, int dmg, int mDmg);
+//         virtual ~Necromancer();
 
-        void attack(Unit& enemy) override;
+//         Observer* getObserver() override;
 
-        void takeDamage(int dmg) override;
+//         void attack(Unit& enemy) override;
 
-        void addManaPoints(int mana) override;
-};
+//         void takeDamage(int dmg) override;
 
-std::ostream& operator<<(std::ostream& out, const Necromancer& necromancer);
+//         void addManaPoints(int mana) override;
+// };
 
-#endif //NECROMANCEER_HPP
+// std::ostream& operator<<(std::ostream& out, const Necromancer& necromancer);
+
+// #endif //NECROMANCEER_HPP
