@@ -20,11 +20,11 @@
 //     this->observerList->clear();
 // }
 
-// std::map<std::string, Unit*>& Observer::getList() {
+// std::map<std::string, Unit*>& Observer::getList() const {
 //     return *observerList;
 // }
 
-// std::ostream& operator<<(std::ostream& out, Observer& observer) {
+// std::ostream& operator<<(std::ostream& out, const Observer& observer) {
 //     out << "Observer List: " << observer.getList() << std::endl;
 
 //     return out;

@@ -18,7 +18,7 @@ void Priest::addManaPoints(int mana) {
 }
 
 std::ostream& operator<<(std::ostream& out, const Priest& priest) {
-    out << "Priest: " << priest.getName() << "HP:(" << priest.getHitPointsLimit() << "/" << priest.getHitPoints() << ")"
+    out << "Priest: " << priest.getName() << ", HP:(" << priest.getHitPointsLimit() << "/" << priest.getHitPoints() << ")"
     << ", MANA:(" << priest.getManaPointsLimit() << "/" << priest.getManaPoints() << ")"
     << ", magic damage: " << priest.getMagicDamage() << ", damage: " << priest.getDamage() << std::endl;
 

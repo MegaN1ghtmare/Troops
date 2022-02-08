@@ -5,10 +5,12 @@
 #include "Ability.hpp"
 #include "../Properties/UnitClassifier.hpp"
 // #include "../Properties/Observable.hpp"
+// #include "../Properties/Observer.hpp"
 
 class Ability;
 class UnitClassifier;
 // class Observable;
+// class Observer;
 
 class Unit {
     private:
@@ -19,6 +21,7 @@ class Unit {
         Ability* action;
         UnitClassifier* status;
         // Observable* observable;
+        // Observer* observer;
     public:
         Unit(const std::string& name, int hp, int dmg);
         virtual ~Unit();
@@ -32,8 +35,8 @@ class Unit {
         virtual bool getIfAbleToCastUnit() const;
         virtual bool getIfUnitUndead() const;
 
-        // Observable* getObservable() const;
-        // virtual Observer* getObserver() = 0;
+        // virtual Observable* getObservable() const;
+        // virtual Observer* getObserver() const;
 
         virtual void addHitPoints(int hp);
         virtual void takeDamage(int dmg) = 0;

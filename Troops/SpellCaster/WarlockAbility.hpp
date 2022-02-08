@@ -11,6 +11,8 @@
 class WarlockAbility: public SpellCasterAbility {
     private:
         int callDemonManaCost;
+        int demonCounter;
+        std::map <std::string, Demon*> demonMap;
     public:
         WarlockAbility(int& dmg, int& mDmg, int& hp, int& hpLimits, int& manaPoints, int& mpLimits, int& sCost);
         virtual ~WarlockAbility();

@@ -3,6 +3,7 @@
 WarlockAbility::WarlockAbility(int& dmg, int& mDmg, int& hp, int& hpLimits, int& manaPoints, int& mpLimits, int& sCost)
     : SpellCasterAbility(dmg, mDmg, hp, hpLimits, manaPoints, mpLimits, sCost) {
         this->callDemonManaCost = manaPointsLimit * 0.5;
+        this->demonCounter = 1;
 }
 
 WarlockAbility::~WarlockAbility() {
@@ -27,19 +28,17 @@ void WarlockAbility::magicAttack(SpellCaster& caller, Unit& enemy) {
 }
 
 void WarlockAbility::callDemon() {
-    int demonCounter = 1;
     std::string demonName = "Demon-";
 
     std::stringstream ss;
     ss << demonCounter;
     demonName += ss.str();
 
-    Demon demon(demonName, 100, 10);
-    std::map <std::string, int> demonMap;
-    demonMap.insert ( std::pair<std::string, int>(demonName, demonCounter) );
+    Demon* demon = new Demon(demonName, 100, 10);
 
-      for (auto it = demonMap.begin(); it != demonMap.end(); ++it)
-      {
+    demonMap.insert ( std::pair<std::string, Demon*>(demonName, demon) );
+
+      for (auto it = demonMap.begin(); it != demonMap.end(); ++it) {
           std::cout << it->first << std::endl;
       }
 

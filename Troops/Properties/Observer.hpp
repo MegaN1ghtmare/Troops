@@ -18,7 +18,7 @@
 //         virtual void removeUnitFromList(Unit* observable);
 //         virtual void clearList();
 
-//         virtual std::map<std::string, Unit*>& getList();
+//         virtual std::map<std::string, Unit*>& getList() const;
 // };
 
 // std::ostream& operator<<(std::ostream& out, Observer& observer);

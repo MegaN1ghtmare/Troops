@@ -18,7 +18,7 @@ void Warlock::addManaPoints(int mana) {
 }
 
 std::ostream& operator<<(std::ostream& out, const Warlock& warlock) {
-    out << "Warlock: " << warlock.getName() << "HP:(" << warlock.getHitPointsLimit() << "/" << warlock.getHitPoints() << ")"
+    out << "Warlock: " << warlock.getName() << ", HP:(" << warlock.getHitPointsLimit() << "/" << warlock.getHitPoints() << ")"
     << ", MANA:(" << warlock.getManaPointsLimit() << "/" << warlock.getManaPoints() << ")"
     << ", magic damage: " << warlock.getMagicDamage() << ", damage: " << warlock.getDamage() << std::endl;
 

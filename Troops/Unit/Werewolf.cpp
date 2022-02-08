@@ -1,6 +1,4 @@
 #include "Werewolf.hpp"
-// #include "Ability.hpp"
-// #include "WerewolfAbility.hpp"
 
 #define WEREWOLFDMGMLTP 3
 #define WEREWOLFHPMLTP 4

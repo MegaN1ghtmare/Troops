@@ -4,6 +4,7 @@
 #include "SpellCasterAbility.hpp"
 #include "../Unit/Unit.hpp"
 
+class Unit;
 class SpellCasterAbility;
 
 class SpellCaster: public Unit {
