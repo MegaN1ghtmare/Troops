@@ -110,6 +110,11 @@ int main() {
     std::cout << "rog created: "<< std::endl;
     std::cout << rog << std::endl;
 
+    std::cout << "warlock attack sold:" << std::endl;
+    warlock.attack(sold);
+    std::cout << sold << std::endl;
+    std::cout << warlock << std::endl;
+
     // vampire.attack(bers);
     // std::cout << "vampire attack bers:" << std::endl << vampire;
     // std::cout << bers << std::endl;

@@ -20,11 +20,31 @@ void WarlockAbility::magicAttack(SpellCaster& caller, Unit& enemy) {
     enemy.takeMagicDamage(getMagicDamage());
     manaPoints -= caller.getSpellCost();
 
+    if ( demonMap.empty() != true ) {
+        for ( auto it = demonMap.begin(); it != demonMap.end(); it++ ) {
+            (*(it->second)).attack(enemy);
+        }
+    }
+
     if ( enemy.getHitPoints() > 0 ) {
         enemy.counterAttack(caller);
     }
 
     caller.addManaPoints(getManaPointsLimit() * 0.03);
+}
+
+void WarlockAbility::attack(Unit& caller, Unit& enemy) {
+    enemy.takeDamage(getDamage());
+
+    if ( demonMap.empty() != true ) {
+        for ( auto it = demonMap.begin(); it != demonMap.end(); it++ ) {
+            (*(it->second)).attack(enemy);
+        }
+    }
+
+    if ( enemy.getHitPoints() > 0 ) {
+        enemy.counterAttack(caller);
+    }
 }
 
 void WarlockAbility::callDemon() {
@@ -38,9 +58,21 @@ void WarlockAbility::callDemon() {
 
     demonMap.insert ( std::pair<std::string, Demon*>(demonName, demon) );
 
-      for (auto it = demonMap.begin(); it != demonMap.end(); ++it) {
+      for ( auto it = demonMap.begin(); it != demonMap.end(); it++ ) {
           std::cout << it->first << std::endl;
       }
 
     demonCounter += 1;
+}
+
+std::string WarlockAbility::getDemonMap() const {
+    std::string out;
+
+    std::stringstream ss;
+    for ( auto it = demonMap.begin(); it != demonMap.end(); it++ ) {
+        ss << *(it->second);
+    }
+    out += ss.str();
+
+    return out;
 }

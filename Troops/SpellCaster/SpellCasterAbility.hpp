@@ -23,6 +23,8 @@ class SpellCasterAbility: public Ability {
 
         virtual void addManaPoints(int mana);
         virtual void magicAttack(SpellCaster& caller, Unit& enemy);
+
+        virtual std::string getDemonMap() const;
 };
 
 #endif //SPELLCASTERABILITY_HPP

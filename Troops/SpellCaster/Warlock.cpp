@@ -17,10 +17,15 @@ void Warlock::addManaPoints(int mana) {
     action->addManaPoints(mana);
 }
 
+std::string Warlock::getDemonMap() const {
+    return action->getDemonMap();
+}
+
 std::ostream& operator<<(std::ostream& out, const Warlock& warlock) {
     out << "Warlock: " << warlock.getName() << ", HP:(" << warlock.getHitPointsLimit() << "/" << warlock.getHitPoints() << ")"
     << ", MANA:(" << warlock.getManaPointsLimit() << "/" << warlock.getManaPoints() << ")"
-    << ", magic damage: " << warlock.getMagicDamage() << ", damage: " << warlock.getDamage() << std::endl;
+    << ", magic damage: " << warlock.getMagicDamage() << ", damage: " << warlock.getDamage() << std::endl
+    << "Warlock had minions:" << std::endl << warlock.getDemonMap();
 
     return out;
 }

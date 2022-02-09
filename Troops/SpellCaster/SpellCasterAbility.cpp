@@ -51,3 +51,9 @@ int& SpellCasterAbility::getManaPointsLimit() const {
 int& SpellCasterAbility::getSpellCost() const {
     return spellCost;
 }
+
+std::string SpellCasterAbility::getDemonMap() const {
+    std::string out = "No Demons aviliable";
+
+    return out;
+}

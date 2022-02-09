@@ -18,8 +18,11 @@ class WarlockAbility: public SpellCasterAbility {
         virtual ~WarlockAbility();
 
         void magicAttack(SpellCaster& caller, Unit& enemy) override;
+        void attack(Unit& caller, Unit& enemy) override;
 
         void callDemon();
+
+        std::string getDemonMap() const override;
 };
 
 #endif //WARLOCKABILITY_HPP

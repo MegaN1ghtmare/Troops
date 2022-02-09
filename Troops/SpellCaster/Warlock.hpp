@@ -12,6 +12,8 @@ class Warlock: public SpellCaster {
         virtual ~Warlock();
 
         void addManaPoints(int mana) override;
+
+        std::string getDemonMap() const;
 };
 
 std::ostream& operator<<(std::ostream& out, const Warlock& warlock);
