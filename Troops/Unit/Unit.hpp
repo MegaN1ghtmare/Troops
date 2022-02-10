@@ -4,13 +4,15 @@
 #include <iostream>
 #include "Ability.hpp"
 #include "../Properties/UnitClassifier.hpp"
-// #include "../Properties/Observable.hpp"
-// #include "../Properties/Observer.hpp"
+#include "../Properties/Observable.hpp"
+#include "../Properties/Observer.hpp"
+// #include "../Interfaces/IObservable.hpp"
+// #include "../Interfaces/IObserver.hpp"
 
 class Ability;
 class UnitClassifier;
-// class Observable;
-// class Observer;
+class Observable;
+class Observer;
 
 class Unit {
     private:
@@ -20,8 +22,8 @@ class Unit {
         std::string name;
         Ability* action;
         UnitClassifier* status;
-        // Observable* observable;
-        // Observer* observer;
+        Observable* observable;
+        Observer* observer;
     public:
         Unit(const std::string& name, int hp, int dmg);
         virtual ~Unit();
@@ -35,8 +37,8 @@ class Unit {
         virtual bool getIfAbleToCastUnit() const;
         virtual bool getIfUnitUndead() const;
 
-        // virtual Observable* getObservable() const;
-        // virtual Observer* getObserver() const;
+        virtual Observable* getObservable() const;
+        virtual Observer* getObserver() const;
 
         virtual void addHitPoints(int hp);
         virtual void takeDamage(int dmg) = 0;
@@ -66,6 +68,7 @@ class Unit {
         friend class Demon;
         friend class Warlock;
         friend class WizardAbility;
+        friend class Necromancer;
 };
 
 std::ostream& operator<<(std::ostream& out, const Unit& unit);

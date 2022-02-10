@@ -3,7 +3,7 @@
 Healer::Healer(const std::string& name, int hp, int mana, int dmg, int mDmg)
     : SpellCaster(name, hp, mana, dmg, mDmg) {
 
-    spellCost = 12;
+    this->spellCost = 12;
 
     this->action = new HealerAbility(damage, magicDamage, hitPoints, hitPointsLimit, manaPoints, manaPointsLimit, spellCost);
     this->status = new UnitClassifier(1, 1, 0);

@@ -54,6 +54,7 @@ class SpellCaster: public Unit {
         friend class Healer;
         friend class Warlock;
         friend class WizardAbility;
+        friend class Necromancer;
 };
 
 std::ostream& operator<<(std::ostream& out, const SpellCaster& spellCaster);

@@ -22,7 +22,14 @@
 #include "SpellCaster/PriestAbility.hpp"
 #include "SpellCaster/Warlock.hpp"
 #include "SpellCaster/WarlockAbility.hpp"
+#include "SpellCaster/Necromancer.hpp"
 
+#include "Interfaces/IObserver.hpp"
+#include "Interfaces/IObservable.hpp"
+
+#include "Properties/Observer.hpp"
+#include "Properties/Observable.hpp"
+#include "Properties/UnitClassifier.hpp"
 
 int main() {
     Vampire vampire("VLADIMIR", 444, 56);
@@ -114,6 +121,21 @@ int main() {
     warlock.attack(sold);
     std::cout << sold << std::endl;
     std::cout << warlock << std::endl;
+
+    Necromancer necromancer("Devil", 250, 150, 25, 60);
+    std::cout << "necro created: " << std::endl;
+    std::cout << necromancer << std::endl;
+
+    std::cout << "Necro attack sold, ber, warlock, mag:" << std::endl;
+    necromancer.attack(sold);
+    necromancer.attack(bers);
+    necromancer.attack(warlock);
+    necromancer.attack(mag);
+    std::cout << sold << std::endl;
+    std::cout << bers << std::endl;
+    std::cout << warlock << std::endl;
+    std::cout << mag << std::endl;
+    std::cout << necromancer << std::endl;
 
     // vampire.attack(bers);
     // std::cout << "vampire attack bers:" << std::endl << vampire;

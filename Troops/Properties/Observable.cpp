@@ -1,17 +1,17 @@
-// #include "Observable.hpp"
+#include "Observable.hpp"
 
-// Observable::Observable(): IObservable() {
+Observable::Observable(): IObservable() {
 
-// }
+}
 
-// Observable::~Observable() {
+Observable::~Observable() {
 
-// }
+}
 
-// void Observable::addObservableToObserverList(Unit* observable, Unit* observer) {
-//     observer->getObserver()->addUnitToList(observable);
-// }
+void Observable::addObservableToObserverList(Unit& observable, Unit& observer) {
+    observer.getObserver()->addUnitToList(observable);
+}
 
-// void Observable::deathEvent() {
+void Observable::deathEvent() {
 
-// }
+}
