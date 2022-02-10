@@ -34,7 +34,6 @@
 int main() {
     Vampire vampire("VLADIMIR", 444, 56);
     Priest priest("MICHAIL", 9999, 230, 42, 140);
-    // Soldier knight("ARCHANGEL", 200, 50);
     std::cout << "vampire and priest created:" << std::endl << vampire;
     std::cout << priest << std::endl;
 
@@ -126,13 +125,16 @@ int main() {
     std::cout << "necro created: " << std::endl;
     std::cout << necromancer << std::endl;
 
-    std::cout << "Necro attack sold, ber, warlock, mag:" << std::endl;
+    std::cout << "Necro attack sold, ber" << std::endl;
     necromancer.attack(sold);
     necromancer.attack(bers);
-    necromancer.attack(warlock);
-    necromancer.attack(mag);
     std::cout << sold << std::endl;
     std::cout << bers << std::endl;
+    std::cout << necromancer << std::endl;
+
+    std::cout << "Necro attack warlock, mag:" << std::endl;
+    necromancer.attack(warlock);
+    necromancer.attack(mag);
     std::cout << warlock << std::endl;
     std::cout << mag << std::endl;
     std::cout << necromancer << std::endl;

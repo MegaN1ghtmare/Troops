@@ -23,6 +23,7 @@ class Observer: public IObserver {
 
 template<typename First, typename Second>
 std::ostream& operator<<(std::ostream& out, const std::map<First, Second>& lst);
+
 std::ostream& operator<<(std::ostream& out, const Observer& observer);
 
 #endif //OBSERVER_HPP

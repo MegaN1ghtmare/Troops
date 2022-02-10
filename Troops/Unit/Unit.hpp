@@ -6,8 +6,6 @@
 #include "../Properties/UnitClassifier.hpp"
 #include "../Properties/Observable.hpp"
 #include "../Properties/Observer.hpp"
-// #include "../Interfaces/IObservable.hpp"
-// #include "../Interfaces/IObserver.hpp"
 
 class Ability;
 class UnitClassifier;
@@ -39,6 +37,7 @@ class Unit {
 
         virtual Observable* getObservable() const;
         virtual Observer* getObserver() const;
+        virtual std::map<std::string, Unit*>& getList() const;
 
         virtual void addHitPoints(int hp);
         virtual void takeDamage(int dmg) = 0;
@@ -69,6 +68,8 @@ class Unit {
         friend class Warlock;
         friend class WizardAbility;
         friend class Necromancer;
+        friend class Observer;
+        friend class Observable;
 };
 
 std::ostream& operator<<(std::ostream& out, const Unit& unit);

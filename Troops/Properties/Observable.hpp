@@ -5,6 +5,8 @@
 #include "../Unit/Unit.hpp"
 
 class Observable: public IObservable {
+    protected:
+        std::map<std::string, Unit*>* observableList;
     public:
         Observable();
         virtual ~Observable();

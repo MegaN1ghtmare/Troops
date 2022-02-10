@@ -28,7 +28,7 @@ void Necromancer::addManaPoints(int mana) {
 std::ostream& operator<<(std::ostream& out, const Necromancer& necromancer) {
     out << "Necromancer: " << necromancer.getName() << ", HP:(" << necromancer.getHitPointsLimit() << "/" << necromancer.getHitPoints() << ")"
     << ", MANA:(" << necromancer.getManaPointsLimit() << "/" << necromancer.getManaPoints() << ")"
-    << ", magic damage: " << necromancer.getMagicDamage() << ", damage: " << necromancer.getDamage() << std::endl;
+    << ", magic damage: " << necromancer.getMagicDamage() << ", damage: " << necromancer.getDamage() << std::endl << necromancer.getList();
 
     return out;
 }

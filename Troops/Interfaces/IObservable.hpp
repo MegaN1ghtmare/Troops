@@ -1,6 +1,9 @@
 #ifndef IOBSERVABLE_HPP
 #define IOBSERVABLE_HPP
 
+#include <string>
+#include <map>
+
 class Unit;
 
 class IObservable {

@@ -44,6 +44,10 @@ Observer* Unit::getObserver() const {
     return this->observer;
 }
 
+std::map<std::string, Unit*>& Unit::getList() const {
+    return observer->getList();
+}
+
 bool Unit::getIfMeleeUnit() const {
     return status->getIfMeleeUnit();
 }
