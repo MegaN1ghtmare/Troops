@@ -18,7 +18,7 @@ void Wizard::addManaPoints(int mana) {
 }
 
 std::ostream& operator<<(std::ostream& out, const Wizard& wizard) {
-    out << "Wizard: " << wizard.getName() << "HP:(" << wizard.getHitPointsLimit() << "/" << wizard.getHitPoints() << ")"
+    out << "Wizard: " << wizard.getName() << ", HP:(" << wizard.getHitPointsLimit() << "/" << wizard.getHitPoints() << ")"
     << ", MANA:(" << wizard.getManaPointsLimit() << "/" << wizard.getManaPoints() << ")"
     << ", magic damage: " << wizard.getMagicDamage() << ", damage: " << wizard.getDamage() << std::endl;
 

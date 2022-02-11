@@ -46,12 +46,14 @@ void Werewolf::addHitPoints(int hp) {
 void Werewolf::takeDamage(int dmg) {
     currentState->takeDamage(dmg);
     isObjectDead();
+    checkUnitAlives();
     transformationCounter(1);
 }
 
 void Werewolf::takeMagicDamage(int dmg) {
     currentState->takeMagicDamage(dmg);
     isObjectDead();
+    checkUnitAlives();
     transformationCounter(3);
 }
 

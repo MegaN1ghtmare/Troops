@@ -125,19 +125,21 @@ int main() {
     std::cout << "necro created: " << std::endl;
     std::cout << necromancer << std::endl;
 
-    std::cout << "Necro attack sold, ber" << std::endl;
-    necromancer.attack(sold);
-    necromancer.attack(bers);
-    std::cout << sold << std::endl;
-    std::cout << bers << std::endl;
-    std::cout << necromancer << std::endl;
+    for ( int i = 0; i < 2; i++ ) {
+      std::cout << "Necro attack sold, ber" << std::endl;
+      necromancer.attack(sold);
+      necromancer.attack(bers);
+      std::cout << sold << std::endl;
+      std::cout << bers << std::endl;
+      std::cout << necromancer << std::endl;
 
-    std::cout << "Necro attack warlock, mag:" << std::endl;
-    necromancer.attack(warlock);
-    necromancer.attack(mag);
-    std::cout << warlock << std::endl;
-    std::cout << mag << std::endl;
-    std::cout << necromancer << std::endl;
+      std::cout << "Necro attack warlock, mag:" << std::endl;
+      necromancer.attack(warlock);
+      necromancer.attack(mag);
+      std::cout << warlock << std::endl;
+      std::cout << mag << std::endl;
+      std::cout << necromancer << std::endl;
+    }
 
     // vampire.attack(bers);
     // std::cout << "vampire attack bers:" << std::endl << vampire;

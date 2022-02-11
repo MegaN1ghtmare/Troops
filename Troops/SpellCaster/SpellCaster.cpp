@@ -33,6 +33,7 @@ int SpellCaster::getSpellCost() const {
 
 void SpellCaster::takeDamage(int dmg) {
     action->takeDamage(dmg);
+    checkUnitAlives();
 }
 
 void SpellCaster::attack(Unit& enemy) {

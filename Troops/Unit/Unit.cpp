@@ -60,16 +60,34 @@ bool Unit::getIfUnitUndead() const {
     return status->getIfUnitUndead();
 }
 
+bool Unit::getUnitAlive() const {
+    return this->unitAlive;
+}
+
+void Unit::checkUnitAlives() {
+    if ( getHitPoints() <= 0 ) {
+        setUnitIsDead();
+    }
+}
+
+void Unit::setUnitIsDead() {
+    this->unitAlive = false;
+
+    observable->deathEvent(*this);
+}
+
 void Unit::addHitPoints(int hp) {
     action->addHitPoints(hp);
 }
 
 void Unit::takeDamage(int dmg) {
     action->takeDamage(dmg);
+    checkUnitAlives();
 }
 
 void Unit::takeMagicDamage(int dmg) {
     action->takeMagicDamage(dmg);
+    checkUnitAlives();
 }
 
 void Unit::attack(Unit& enemy) {

@@ -18,6 +18,8 @@ class Observer: public IObserver {
         virtual void removeUnitFromList(Unit& observable);
         virtual void clearList();
 
+        virtual void observableDeathEvent(Unit& observable, Unit& observer);
+
         virtual std::map<std::string, Unit*>& getList() const;
 };
 

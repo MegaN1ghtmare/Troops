@@ -22,6 +22,7 @@ class Unit {
         UnitClassifier* status;
         Observable* observable;
         Observer* observer;
+        bool unitAlive = true;
     public:
         Unit(const std::string& name, int hp, int dmg);
         virtual ~Unit();
@@ -34,6 +35,10 @@ class Unit {
         virtual bool getIfMeleeUnit() const;
         virtual bool getIfAbleToCastUnit() const;
         virtual bool getIfUnitUndead() const;
+
+        virtual bool getUnitAlive() const;
+        virtual void setUnitIsDead();
+        virtual void checkUnitAlives();
 
         virtual Observable* getObservable() const;
         virtual Observer* getObserver() const;

@@ -12,7 +12,7 @@ class Observable: public IObservable {
         virtual ~Observable();
 
         virtual void addObservableToObserverList(Unit& observable, Unit& observer);
-        virtual void deathEvent();
+        virtual void deathEvent(Unit& observable);
 };
 
 #endif //OBSERVABLE_HPP

@@ -20,6 +20,12 @@ void Observer::clearList() {
     this->observerList->clear();
 }
 
+void Observer::observableDeathEvent(Unit& observable, Unit& observer) {
+    observer.addHitPoints(observable.getHitPointsLimit() / 4);
+
+    removeUnitFromList(observable);
+}
+
 std::map<std::string, Unit*>& Observer::getList() const {
     return *observerList;
 }

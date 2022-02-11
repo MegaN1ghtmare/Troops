@@ -13,6 +13,12 @@ void Observable::addObservableToObserverList(Unit& observable, Unit& observer) {
     this->observableList->insert(std::pair<std::string, Unit*>(observer.getName(), &observer));
 }
 
-void Observable::deathEvent() {
+void Observable::deathEvent(Unit& observable) {
     std::cout << "Death happened" << std::endl;
+    for ( auto it = observableList->begin(); it != observableList->end(); it++ ) {
+        Unit* unitObserver = (it->second);
+        Observer* observer = unitObserver->getObserver();
+
+        observer->observableDeathEvent(observable, *unitObserver);
+    }
 }
