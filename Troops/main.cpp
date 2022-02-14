@@ -32,67 +32,67 @@
 #include "Properties/UnitClassifier.hpp"
 
 int main() {
-    Vampire vampire("VLADIMIR", 444, 56);
-    Priest priest("MICHAIL", 9999, 230, 42, 140);
-    std::cout << "vampire and priest created:" << std::endl << vampire;
-    std::cout << priest << std::endl;
+    // Vampire vampire("VLADIMIR", 444, 56);
+    // Priest priest("MICHAIL", 9999, 230, 42, 140);
+    // std::cout << "vampire and priest created:" << std::endl << vampire;
+    // std::cout << priest << std::endl;
 
-    vampire.attack(priest);
-    std::cout << "vampire attack priest:" << std::endl  << vampire;
-    std::cout << priest << std::endl;
+    // vampire.attack(priest);
+    // std::cout << "vampire attack priest:" << std::endl  << vampire;
+    // std::cout << priest << std::endl;
 
-    priest.attack(vampire);
-    std::cout << "priest attack vampire:" << std::endl << vampire;
-    std::cout << priest << std::endl;
+    // priest.attack(vampire);
+    // std::cout << "priest attack vampire:" << std::endl << vampire;
+    // std::cout << priest << std::endl;
 
-    Werewolf werewolf("WoofWoof", 600, 30);
-    std::cout << "werewolf created: " << std::endl;
-    std::cout << werewolf << std::endl;
+    // Werewolf werewolf("WoofWoof", 600, 30);
+    // std::cout << "werewolf created: " << std::endl;
+    // std::cout << werewolf << std::endl;
 
-    std::cout << "priest attack werewolf:" << std::endl;
+    // std::cout << "priest attack werewolf:" << std::endl;
 
-    for ( int i = 0; i < 2; i++ ) {
-      priest.attack(werewolf);
-      std::cout << werewolf << std::endl;
-      std::cout << priest << std::endl;
-    }
+    // for ( int i = 0; i < 2; i++ ) {
+    //   priest.attack(werewolf);
+    //   std::cout << werewolf << std::endl;
+    //   std::cout << priest << std::endl;
+    // }
 
-    std::cout << "werewolf attack vampire:" << std::endl;
-    werewolf.attack(vampire);
-    std::cout << werewolf << std::endl;
-    std::cout << vampire << std::endl;
+    // std::cout << "werewolf attack vampire:" << std::endl;
+    // werewolf.attack(vampire);
+    // std::cout << werewolf << std::endl;
+    // std::cout << vampire << std::endl;
 
-    std::cout << "vampire attack werewolf:" << std::endl;
-    vampire.attack(werewolf);
-    std::cout << werewolf << std::endl;
-    std::cout << vampire << std::endl;
+    // std::cout << "vampire attack werewolf:" << std::endl;
+    // vampire.attack(werewolf);
+    // std::cout << werewolf << std::endl;
+    // std::cout << vampire << std::endl;
 
-    for ( int i = 0; i < 2; i++ ) {
-      std::cout << "werewolf attack priest:" << std::endl;
-      werewolf.attack(priest);
-      std::cout << werewolf << std::endl;
-      std::cout << priest << std::endl;
-    }
+    // for ( int i = 0; i < 2; i++ ) {
+    //   std::cout << "werewolf attack priest:" << std::endl;
+    //   werewolf.attack(priest);
+    //   std::cout << werewolf << std::endl;
+    //   std::cout << priest << std::endl;
+    // }
 
     Warlock warlock("Warlock Warrior", 300, 200, 10, 40);
 
-    std::cout << "warlock attack werewolf:" << std::endl;
-    warlock.attack(werewolf);
-    std::cout << werewolf << std::endl;
-    std::cout << warlock << std::endl;
+    // std::cout << "warlock attack werewolf:" << std::endl;
+    // warlock.attack(werewolf);
+    // std::cout << werewolf << std::endl;
+    // std::cout << warlock << std::endl;
 
-    std::cout << "warlock attack priest:" << std::endl;
-    warlock.attack(priest);
-    std::cout << priest << std::endl;
-    std::cout << warlock << std::endl;
+    // std::cout << "warlock attack priest:" << std::endl;
+    // warlock.attack(priest);
+    // std::cout << priest << std::endl;
+    // std::cout << warlock << std::endl;
 
-    std::cout << "warlock attack priest:" << std::endl;
-    warlock.attack(priest);
-    std::cout << priest << std::endl;
-    std::cout << warlock << std::endl;
+    // std::cout << "warlock attack priest:" << std::endl;
+    // warlock.attack(priest);
+    // std::cout << priest << std::endl;
+    // std::cout << warlock << std::endl;
 
-    Wizard sup("Sup", 100, 150, 5, 25);
-    Wizard mag("Mag", 80, 200, 7, 38);
+    // Wizard sup("Sup", 100, 150, 5, 25);
+    Wizard mag("Mag", 200, 200, 10, 40);
     // std::cout << "mag created:" << std::endl << mag;
     // std::cout << sup << std::endl;
 
@@ -121,17 +121,17 @@ int main() {
     std::cout << sold << std::endl;
     std::cout << warlock << std::endl;
 
-    Necromancer necromancer("Devil", 250, 150, 25, 60);
+    Necromancer necromancer("Devil", 300, 200, 25, 60);
     std::cout << "necro created: " << std::endl;
     std::cout << necromancer << std::endl;
 
-    for ( int i = 0; i < 2; i++ ) {
-      std::cout << "Necro attack sold, ber" << std::endl;
-      necromancer.attack(sold);
-      necromancer.attack(bers);
-      std::cout << sold << std::endl;
-      std::cout << bers << std::endl;
-      std::cout << necromancer << std::endl;
+    for ( int i = 0; i < 5; i++ ) {
+      // std::cout << "Necro attack sold, ber" << std::endl;
+      // necromancer.attack(sold);
+      // necromancer.attack(bers);
+      // std::cout << sold << std::endl;
+      // std::cout << bers << std::endl;
+      // std::cout << necromancer << std::endl;
 
       std::cout << "Necro attack warlock, mag:" << std::endl;
       necromancer.attack(warlock);

@@ -21,7 +21,9 @@ void Observer::clearList() {
 }
 
 void Observer::observableDeathEvent(Unit& observable, Unit& observer) {
-    observer.addHitPoints(observable.getHitPointsLimit() / 4);
+    int hpForNecro = observable.getHitPointsLimit() / 4;
+    std::cout << "hpForNecro = " << hpForNecro << std::endl;
+    observer.addHitPoints(hpForNecro);
 
     removeUnitFromList(observable);
 }

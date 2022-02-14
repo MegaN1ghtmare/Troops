@@ -3,7 +3,7 @@
 
 void Ability::ensureIsAlive() {
    if ( this->hitPoints == 0 ) {
-       throw UnitIsDead();
+       // throw UnitIsDead();
    }
 }
 
